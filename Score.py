@@ -3,6 +3,3 @@ def points_of_winning(difficulty):
     return points
 
 def add_score(difficulty):
-
-
-
