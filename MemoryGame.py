@@ -1,5 +1,7 @@
 import random
 
+from Score import points_of_winning
+
 
 def generate_sequence(difficulty):
     lst = []
