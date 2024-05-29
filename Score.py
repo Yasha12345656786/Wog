@@ -9,7 +9,7 @@ def add_score(difficulty):
         file.close()
         print("Your Score Was Saved")
     except FileNotFoundError:
-        file1 = open('Scores1.txt', 'a')
+        file1 = open('Scores.txt', 'a')
         file1.write(f"{points_of_winning}")
         file1.close()
         print("Your Score Was Saved")
