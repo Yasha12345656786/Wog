@@ -1,6 +1,5 @@
 import random
-
-
+from Score import add_score
 
 
 def generate_number(difficulty):
@@ -29,6 +28,7 @@ def play_guess_game(difficulty):
     wl = compare_results(n1, n2)
     if wl:
         print("You Won")
+        add_score(difficulty)
         return True
     else:
         print("You Lost")

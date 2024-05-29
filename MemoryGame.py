@@ -1,6 +1,5 @@
 import random
-
-from Score import points_of_winning
+from Score import add_score
 
 
 def generate_sequence(difficulty):
@@ -36,6 +35,7 @@ def play_memory_game(difficulty):
     user_lst = get_list_from_user(difficulty)
     if is_list_equal(gen_lst,user_lst):
         print("You Won")
+        add_score(difficulty)
         return True
     else:
         print("You Lost")
