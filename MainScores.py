@@ -1,9 +1,11 @@
 from flask import render_template, Flask
 import os
 
+
 def score_server():
     try:
         app = Flask(__name__, template_folder='./html')
+
         @app.route("/")
         def players_points():
             scores = []
