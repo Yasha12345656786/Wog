@@ -1,0 +1,14 @@
+# Build the Docker image and tag it, for example, with the name 'myflaskapp'
+docker build -t myflaskapp .
+
+# Run the Docker container
+docker run -p 5000:5000 myflaskapp
+
+
+docker-compose up --build
+docker login
+# Build the Docker image with the tag 'your_dockerhub_username/myflaskapp:latest'
+docker build -t your_dockerhub_username/myflaskapp:latest .
+
+# Push the Docker image to Docker Hub
+docker push your_dockerhub_username/myflaskapp:latest

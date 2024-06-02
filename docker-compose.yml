@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  flaskapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_APP: app.py
+
+  # Define other services here if you have any
+
+# Use the below optional section to push the image to Docker Hub
+# This requires you to be logged in to Docker Hub using 'docker login'
+# and replace 'your_dockerhub_username' with your Docker Hub username.
