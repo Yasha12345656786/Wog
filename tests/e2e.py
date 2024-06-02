@@ -21,4 +21,4 @@ def test_score_service():
         dr.close()
 
 
-test_score_service()
+
