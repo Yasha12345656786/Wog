@@ -1,3 +1,5 @@
+from Score import add_score
+
 
 def ask_for_name():
     print("Enter Your Name:")
@@ -51,20 +53,18 @@ def load_game():
     if game == 1:
         print(f"{game} , Difficulty {difficulty}")
         from GuessGame import play_guess_game
-        return play_guess_game(difficulty)
+        if play_guess_game(difficulty):
+            add_score(difficulty)
     elif game == 2:
         print(f"{game} , Difficulty {difficulty}")
         from MemoryGame import play_memory_game
-        return play_memory_game(difficulty)
+        if play_memory_game(difficulty):
+            add_score(difficulty)
     elif game == 3:
         print(f"{game} , Difficulty {difficulty}")
         from CurrencyRouletteGame import play_currency_game
-        return play_currency_game(difficulty)
-
-    print("Your Game Is Loading...")
+        if play_currency_game(difficulty):
+            add_score(difficulty)
 
 
 load_game()
-
-
-

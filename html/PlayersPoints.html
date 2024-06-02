@@ -5,8 +5,20 @@
    <title>Scores Game</title>
 </head>
 <body>
-   <h1>The score is <div id="score">{% for score in scores %}
-                        score: {{ score }} <br/>{% endfor %}
+
+
+   <h1>The score is
+       <div id="score" data-len="{{length}}">
+       {% for i in range(0,length) %}
+           <div id = "score_{{i}}">
+                        score: {{ scores[i] }} <br/>
+               </div>
+           {% endfor %}
    </div></h1>
+
+
 </body>
 </html>
+
+
+

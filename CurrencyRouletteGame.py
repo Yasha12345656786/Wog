@@ -36,7 +36,6 @@ def play_currency_game(difficulty):
 
     if user_guess_in_ils*start_money == usd and user_guess_in_ils*end_money == usd:
         print(" You Won! ")
-        add_score(difficulty)
         return True
     else:
         print("You Lost")
