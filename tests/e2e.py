@@ -25,5 +25,9 @@ def test_score_service():
         return success
 
 
-exit_code = test_score_service()
-exit(exit_code)
+def main_function():
+    exit_code = test_score_service()
+    exit(exit_code)
+
+
+main_function()
