@@ -12,3 +12,7 @@ docker build -t your_dockerhub_username/myflaskapp:latest .
 
 # Push the Docker image to Docker Hub
 docker push your_dockerhub_username/myflaskapp:latest
+
+docker run --name wog -p5000:5000 wog:1.7
+
+docker compose up

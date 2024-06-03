@@ -12,8 +12,3 @@ services:
     environment:
       FLASK_APP: MainScores.py
 
-  # Define other services here if you have any
-
-# Use the below optional section to push the image to Docker Hub
-# This requires you to be logged in to Docker Hub using 'docker login'
-# and replace 'your_dockerhub_username' with your Docker Hub username.
