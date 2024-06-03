@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.12'
 
 services:
   flaskapp:
@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
     environment:
-      FLASK_APP: app.py
+      FLASK_APP: MainScores.py
 
   # Define other services here if you have any
 

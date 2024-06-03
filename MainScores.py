@@ -13,7 +13,7 @@ def score_server():
                 scores = [line.rstrip('\n') for line in f]
             return render_template('PlayersPoints.html', scores=scores, length=len(scores))
 
-        app.run(debug=True)
+        app.run(debug=True, host="0.0.0.0", port=5000)
     except Exception as errors:
         app = Flask(__name__, template_folder='./html')
 
@@ -21,7 +21,7 @@ def score_server():
         def players_points():
             return render_template('PlayersPointsErr.html', errors=errors)
 
-        app.run(debug=True)
+        app.run(debug=True, host="0.0.0.0", port=5000)
 
 
 score_server()

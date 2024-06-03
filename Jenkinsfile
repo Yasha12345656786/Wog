@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id')
-        DOCKER_IMAGE = 'your_dockerhub_username/myflaskapp:latest'
+        DOCKER_IMAGE = 'rtyuiioo/wog:latest'
     }
 
     stages {

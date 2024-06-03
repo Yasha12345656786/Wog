@@ -1,23 +1,28 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-slim
+FROM python:3.12-alpine
 
-# Set the working directory in the container
+# copy the requirements file into the image
+COPY ./requirements.txt /app/requirements.txt
+
+# switch working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# install the dependencies and packages in the requirements file
+RUN pip install -r requirements.txt
+
+# copy every content from the local file to the image
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+COPY Scores.txt /Scores.txt
+
+# configure the container to run in an executed manner
+ENTRYPOINT [ "python" ]
+
 
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Copy the Scores.txt file to the root directory of the container
-COPY Scores.txt /Scores.txt
-
-# Define environment variable
 ENV FLASK_APP=app.py
 
 # Run the Flask app
-CMD ["flask", "run", "--host=127.0.0.1"]
+CMD ["MainScores.py"]
