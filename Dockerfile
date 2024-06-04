@@ -17,4 +17,4 @@ EXPOSE 5000
 
 ENV FLASK_APP=app.py
 
-CMD ["MainScores.py"
+CMD ["MainScores.py"]

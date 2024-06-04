@@ -19,4 +19,4 @@ docker run --name wog -p5000:5000 wog:1.7
 
 docker compose up
 
-Program Files\Jenkin
+Program Files\Jenkins

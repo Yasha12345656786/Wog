@@ -10,5 +10,5 @@ services:
     volumes:
       - .:/app
     environment:
-      FLASK_APP: MainScores.p
+      FLASK_APP: MainScores.py
 
