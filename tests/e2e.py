@@ -30,4 +30,4 @@ def main_function():
     exit(exit_code)
 
 
-main_function()
+main_function(

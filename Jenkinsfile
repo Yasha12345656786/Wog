@@ -35,7 +35,7 @@ pipeline {
                     try {
                         sh 'python e2e.py'
                     } catch (Exception e) {
-                        error("Tests failed")
+                        error("Tests failed"
                     }
                 }
             }
