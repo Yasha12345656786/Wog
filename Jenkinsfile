@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('')
+        DOCKERHUB_CREDENTIALS = credentials('dckr_pat_MMJMtPXvlTVfTHSMnXrRoqZILOk')
         DOCKER_IMAGE = 'rtyuiioo/wog:1.12'
     }
 
