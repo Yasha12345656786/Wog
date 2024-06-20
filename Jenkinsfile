@@ -21,49 +21,14 @@ pipeline {
             }
         }
 
-        stage('Run') {
+        stage('CreateVolume') {
             steps {
                 script {
-                    docker.image(DOCKER_IMAGE).run('-p 8777:5000 -v $PWD/Scores.txt:/Scores.txt --name flaskapp')
+                    docker volume create world_of_games
                 }
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    try {
-                        sh 'python e2e.py'
-                    } catch (Exception e) {
-                        error("Tests failed")
-                    }
-                }
-            }
-        }
 
-        stage('Finalize') {
-            steps {
-                script {
-                    sh 'docker stop flaskapp'
-                    sh 'docker rm flaskapp'
-                }
-            }
-        }
-
-        stage('Push to DockerHub') {
-            steps {
-                script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'DOCKERHUB_CREDENTIALS') {
-                        docker.image(DOCKER_IMAGE).push('latest')
-                    }
-                }
-            }
-        }
-    }
-
-    post {
-        always {
-            cleanWs()
-        }
     }
 }
