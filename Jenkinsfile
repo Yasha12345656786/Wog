@@ -9,23 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Yasha12345656786/Wog.git'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                script {
-                    docker.build(DOCKER_IMAGE)
-                }
-            }
-        }
-
-        stage('CreateVolume') {
-            steps {
-                script {
-                    docker volume create world_of_games
-                }
+                checkout([ branch: 'main', url: 'https://github.com/Yasha12345656786/Wog.git' ])
             }
         }
 
