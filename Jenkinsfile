@@ -12,7 +12,7 @@ pipeline {
                 checkout([ branch: 'main', url: 'https://github.com/Yasha12345656786/Wog.git' ])
             }
         }
-
+    }
 
     }
 }
